@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La collection Astro — un gâteau par signe — Sélune</title>
+<meta name="description" content="Chaque mois, Sélune crée un petit gâteau pour le signe astrologique du moment : Balance, Scorpion sans gluten… Grand format sur commande, à Entraigues-sur-la-Sorgue.">
+<meta property="og:title" content="La collection Astro — un gâteau par signe — Sélune">
+<meta property="og:description" content="Chaque mois, Sélune crée un petit gâteau pour le signe astrologique du moment : Balance, Scorpion sans gluten… Grand format sur commande, à Entraigues-sur-la-Sorgue.">
+<meta property="og:image" content="img/hero.webp">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317120E'/%3E%3Ccircle cx='15' cy='17' r='9' fill='%23F3E9DA'/%3E%3Ccircle cx='19' cy='14' r='8' fill='%2317120E'/%3E%3Ccircle cx='24' cy='9' r='1.6' fill='%23C9A56B'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/urbanist-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="vendor/lenis.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="sub p-saisons">
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><span class="cursor__label"></span></span></div>
+<header class="nav" id="nav">
+  <button class="nav__burger" id="burger" aria-label="Menu"><i></i><i></i></button>
+  <a class="nav__logo" href="index.html" aria-label="Sélune">
+    <img class="nav__logo-img" src="img/logo.webp" alt="Sélune — pâtisserie, salon de thé">
+  </a>
+  <nav class="nav__links"><a href="index.html">Accueil</a><a href="carte.html">La carte</a><a href="astro.html" aria-current=page>Astro</a><a href="commandes.html">Sur commande</a><a href="a-propos.html">La maison</a><a href="contact.html">Contact</a></nav>
+  <a class="btn btn--pill" href="tel:+33630168940" data-cursor="Appeler" data-magnet>06 30 16 89 40</a>
+</header>
+<div class="menu" id="menu">
+  <a href="index.html">Accueil</a><a href="carte.html">La carte</a><a href="astro.html" aria-current=page>Astro</a><a href="commandes.html">Sur commande</a><a href="a-propos.html">La maison</a><a href="contact.html">Contact</a>
+</div>
+<main id="top">
+<section class="type-hero">
+  <p class="eyebrow" data-reveal>La collection Astro</p>
+  <div class="type-hero__words"><a href="#balance" class="type-hero__word" style="--c:#C9A56B" data-letters>Balance</a><a href="#scorpion" class="type-hero__word" style="--c:#C9A56B" data-letters>Scorpion</a><a href="#sagittaire" class="type-hero__word" style="--c:#E3D2B4" data-letters>Sagittaire</a><a href="#capricorne" class="type-hero__word" style="--c:#F3E9DA" data-letters>Capricorne</a></div>
+  <p class="type-hero__lead" data-reveal>Chez Sélune, on a la tête dans les étoiles : un petit gâteau par signe astrologique, renouvelé chaque mois. Grand format sur commande. Cliquez un signe.</p>
+</section>
+<div class="stack">
+<section class="panel" id="balance" style="--bg:#17120E;--fg:#F3E9DA" data-panel>
+  <div class="panel__inner">
+    <span class="panel__ghost" aria-hidden="true">Balance</span>
+    <figure class="panel__fig"><img src="img/astro-balance.webp" alt="" loading="lazy" data-panel-img></figure>
+    <div class="panel__text">
+      <p class="eyebrow">Octobre · le Soleil en Balance</p>
+      <h2 class="panel__title" data-letters>Balance</h2>
+      <p class="panel__lead">L’équilibre, l’harmonie des saveurs et la douceur.</p>
+      <ul class="panel__list"><li>Biscuit amande</li><li>Mousse infusée à la verveine</li><li>Poire pochée à la vanille</li></ul>
+      <a class="link" href="tel:+33630168940">Commander en grand format <i>→</i></a>
+    </div>
+    <span class="panel__count">01 / 04</span>
+  </div>
+</section>
+<section class="panel" id="scorpion" style="--bg:#3A3024;--fg:#F3E9DA" data-panel>
+  <div class="panel__inner">
+    <span class="panel__ghost" aria-hidden="true">Scorpion</span>
+    <figure class="panel__fig"><img src="img/astro-scorpion.webp" alt="" loading="lazy" data-panel-img></figure>
+    <div class="panel__text">
+      <p class="eyebrow">23 octobre – 22 novembre</p>
+      <h2 class="panel__title" data-letters>Scorpion</h2>
+      <p class="panel__lead">Un caractère bien trempé, une gourmandise intense — à découvrir jusqu’à fin novembre.</p>
+      <ul class="panel__list"><li>Mousse au chocolat noir relevée au piment d’Espelette</li><li>Biscuit chocolat</li><li>Cœur de confit de cerise noire</li><li>Sans gluten</li></ul>
+      <a class="link" href="tel:+33630168940">Commander en grand format <i>→</i></a>
+    </div>
+    <span class="panel__count">02 / 04</span>
+  </div>
+</section>
+<section class="panel" id="sagittaire" style="--bg:#E3D2B4;--fg:#17120E" data-panel>
+  <div class="panel__inner">
+    <span class="panel__ghost" aria-hidden="true">Sagittaire</span>
+    <figure class="panel__fig"><img src="img/astro-sagittaire.webp" alt="" loading="lazy" data-panel-img></figure>
+    <div class="panel__text">
+      <p class="eyebrow">23 novembre – 21 décembre</p>
+      <h2 class="panel__title" data-letters>Sagittaire</h2>
+      <p class="panel__lead">Le prochain signe de la collection. Sa recette se dévoile sur Instagram — et vous, quel goût lui donneriez-vous ?</p>
+      <ul class="panel__list"><li>Recette à venir</li><li>Annonce sur @selune_patisserie</li></ul>
+      <a class="link" href="tel:+33630168940">Commander en grand format <i>→</i></a>
+    </div>
+    <span class="panel__count">03 / 04</span>
+  </div>
+</section>
+<section class="panel" id="capricorne" style="--bg:#F3E9DA;--fg:#17120E" data-panel>
+  <div class="panel__inner">
+    <span class="panel__ghost" aria-hidden="true">Capricorne</span>
+    <figure class="panel__fig"><img src="img/astro-capricorne.webp" alt="" loading="lazy" data-panel-img></figure>
+    <div class="panel__text">
+      <p class="eyebrow">22 décembre – 20 janvier</p>
+      <h2 class="panel__title" data-letters>Capricorne</h2>
+      <p class="panel__lead">Puis viendra le Capricorne. Douze signes, douze gâteaux : un par mois.</p>
+      <ul class="panel__list"><li>Recette à venir</li><li>Grand format sur commande</li></ul>
+      <a class="link" href="tel:+33630168940">Commander en grand format <i>→</i></a>
+    </div>
+    <span class="panel__count">04 / 04</span>
+  </div>
+</section></div>
+<section class="ig-band">
+  <p class="eyebrow" data-reveal>Le journal de Sélune, sur Instagram</p>
+  <a class="ig-band__handle" href="https://www.instagram.com/selune_patisserie/" target="_blank" rel="noopener" data-cursor="Ouvrir"><svg class="ig-ico ig-ico--big" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.4" fill="currentColor"/></svg>@selune_patisserie</a>
+  <div class="marquee ig-band__row" aria-hidden="true"><div class="marquee__row" data-marquee><span class="ig-band__set"><img src="img/sig-1.webp" alt="" loading="lazy"><img src="img/croissant.webp" alt="" loading="lazy"><img src="img/sig-2.webp" alt="" loading="lazy"><img src="img/maison-framboise.webp" alt="" loading="lazy"><img src="img/macaron.webp" alt="" loading="lazy"><img src="img/tart.webp" alt="" loading="lazy"><img src="img/boutique.webp" alt="" loading="lazy"><img src="img/gal-2.webp" alt="" loading="lazy"></span><span class="ig-band__set"><img src="img/sig-1.webp" alt="" loading="lazy"><img src="img/croissant.webp" alt="" loading="lazy"><img src="img/sig-2.webp" alt="" loading="lazy"><img src="img/maison-framboise.webp" alt="" loading="lazy"><img src="img/macaron.webp" alt="" loading="lazy"><img src="img/tart.webp" alt="" loading="lazy"><img src="img/boutique.webp" alt="" loading="lazy"><img src="img/gal-2.webp" alt="" loading="lazy"></span></div></div>
+</section>
+</main><footer class="footer footer--page">
+  <img class="footer__logo" src="img/logo.webp" alt="Sélune — pâtisserie, salon de thé">
+  <div class="footer__cols">
+    <div><b>Sélune</b><br>37 rue du 19 Mars 1962<br>84320 Entraigues-sur-la-Sorgue</div>
+    <div>Pâtisserie fine · Salon de thé<br>Plats du jour le midi<br>Sur place ou à emporter</div>
+    <div><a href="tel:+33630168940">06 30 16 89 40</a><br><a href="https://www.instagram.com/selune_patisserie/" target="_blank" rel="noopener"><svg class="ig-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.4" fill="currentColor"/></svg>@selune_patisserie</a><br><a href="https://www.google.com/maps?cid=17615685143766384162" target="_blank" rel="noopener">Fiche Google Maps</a></div>
+    <div><a href="index.html">Accueil</a><br><a href="carte.html">La carte</a><br><a href="astro.html">La collection Astro</a><br><a href="commandes.html">Sur commande</a><br><a href="a-propos.html">La maison</a><br><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="footer__row">
+    <span>© 2026 Sélune · SARL · SIRET 106 670 060 00016</span>
+    <span><a href="mentions-legales.html">Mentions légales · CGV · Confidentialité</a></span>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

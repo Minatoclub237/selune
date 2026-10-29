@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sur commande — grand format & gâteaux Astro — Sélune</title>
+<meta name="description" content="Les gâteaux de la collection Astro en grand format, sur commande, à retirer chez Sélune, 37 rue du 19 Mars 1962 à Entraigues-sur-la-Sorgue.">
+<meta property="og:title" content="Sur commande — grand format & gâteaux Astro — Sélune">
+<meta property="og:description" content="Les gâteaux de la collection Astro en grand format, sur commande, à retirer chez Sélune, 37 rue du 19 Mars 1962 à Entraigues-sur-la-Sorgue.">
+<meta property="og:image" content="img/hero.webp">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317120E'/%3E%3Ccircle cx='15' cy='17' r='9' fill='%23F3E9DA'/%3E%3Ccircle cx='19' cy='14' r='8' fill='%2317120E'/%3E%3Ccircle cx='24' cy='9' r='1.6' fill='%23C9A56B'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/urbanist-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="vendor/lenis.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="sub p-mariages">
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><span class="cursor__label"></span></span></div>
+<header class="nav" id="nav">
+  <button class="nav__burger" id="burger" aria-label="Menu"><i></i><i></i></button>
+  <a class="nav__logo" href="index.html" aria-label="Sélune">
+    <img class="nav__logo-img" src="img/logo.webp" alt="Sélune — pâtisserie, salon de thé">
+  </a>
+  <nav class="nav__links"><a href="index.html">Accueil</a><a href="carte.html">La carte</a><a href="astro.html">Astro</a><a href="commandes.html" aria-current=page>Sur commande</a><a href="a-propos.html">La maison</a><a href="contact.html">Contact</a></nav>
+  <a class="btn btn--pill" href="tel:+33630168940" data-cursor="Appeler" data-magnet>06 30 16 89 40</a>
+</header>
+<div class="menu" id="menu">
+  <a href="index.html">Accueil</a><a href="carte.html">La carte</a><a href="astro.html">Astro</a><a href="commandes.html" aria-current=page>Sur commande</a><a href="a-propos.html">La maison</a><a href="contact.html">Contact</a>
+</div>
+<main id="top">
+<section class="mhero">
+  <div class="mhero__pin">
+    <video class="mhero__video" autoplay muted loop playsinline poster="img/mariages-hero.webp" data-hero-img data-src-hd="video/mariages-hero.mp4" data-src-sd="video/mariages-hero-720.mp4"></video>
+    <div class="mhero__veil"></div>
+    <div class="mhero__slide" data-mslide>
+      <p class="eyebrow" data-letters>Sur commande</p>
+      <h1 class="mhero__h"><span data-letters>Votre signe</span><span data-letters>en grand</span></h1>
+      <p class="mhero__p">Chaque petit gâteau de la collection Astro existe en grand format, sur commande. Et pour une envie précise, on en parle.</p>
+      <div class="mhero__cta"><a class="btn btn--light" href="#demande" data-magnet data-cursor="Commander">Faire ma demande</a></div>
+    </div>
+    <div class="mhero__slide" data-mslide><span class="mhero__num" aria-hidden="true">01</span><h2 class="mhero__h"><span data-letters>On en</span><span data-letters>parle</span></h2><p class="mhero__p">Votre signe, le nombre de parts, la date : au 06 30 16 89 40, en message sur Instagram, ou avec le formulaire plus bas.</p></div>
+    <div class="mhero__slide" data-mslide><span class="mhero__num" aria-hidden="true">02</span><h2 class="mhero__h"><span data-letters>Fait</span><span data-letters>maison</span></h2><p class="mhero__p">Préparé chez Sélune, avec intention — comme tout ce qui passe en vitrine.</p></div>
+    <div class="mhero__slide" data-mslide><span class="mhero__num" aria-hidden="true">03</span><h2 class="mhero__h"><span data-letters>Vous le</span><span data-letters>retirez</span></h2><p class="mhero__p">Au 37 rue du 19 Mars 1962, à Entraigues-sur-la-Sorgue. Le temps d’un thé, si vous voulez.</p></div>
+    <div class="mhero__bar"><i id="mBar"></i></div>
+  </div>
+</section>
+
+<section class="stackcards">
+  <header class="stackcards__head"><p class="eyebrow" data-reveal>Idées de commande</p><h2 class="h2" data-letters>Ce qu’on prépare pour vous</h2></header>
+  <div class="stackcards__list">
+    <article class="scard" style="--i:0">
+      <img src="img/scard-1.webp" alt="" loading="lazy">
+      <div class="scard__body"><span class="scard__n">01</span><h3>Le grand format</h3><p>Les petits gâteaux de la collection Astro, en version à partager — sur commande</p></div>
+    </article>
+    <article class="scard" style="--i:1">
+      <img src="img/scard-2.webp" alt="" loading="lazy">
+      <div class="scard__body"><span class="scard__n">02</span><h3>Pour le goûter</h3><p>Un cookie ou une part de cake, avec un jus ou un chocolat chaud — et ça marche aussi pour les adultes</p></div>
+    </article>
+    <article class="scard" style="--i:2">
+      <img src="img/scard-3.webp" alt="" loading="lazy">
+      <div class="scard__body"><span class="scard__n">03</span><h3>Une envie précise ?</h3><p>Votre signe, vos goûts, le nombre de parts : dites-nous tout, on vous répond</p></div>
+    </article></div>
+</section>
+
+<section class="contact" id="demande">
+  <div class="contact__grid">
+    <div class="contact__info">
+      <p class="eyebrow" data-reveal>Votre demande</p>
+      <h2 class="h2" data-letters>Commander</h2>
+      <dl class="boutique__info">
+        <div data-reveal><dt>Par téléphone</dt><dd><a href="tel:+33630168940">06 30 16 89 40</a></dd></div>
+        <div data-reveal><dt>Sur Instagram</dt><dd><a href="https://www.instagram.com/selune_patisserie/" target="_blank" rel="noopener"><svg class="ig-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.4" fill="currentColor"/></svg>@selune_patisserie</a></dd></div>
+      </dl>
+      <form class="boutique__form" data-reveal id="orderForm">
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="tel" name="tel" placeholder="Votre téléphone" required>
+        <input type="date" name="date" aria-label="Date souhaitée">
+        <textarea name="msg" rows="3" placeholder="Votre commande : grand format de votre signe, nombre de parts, date…" required></textarea>
+        <button class="btn btn--light" type="submit" data-cursor="Envoyer" data-magnet>Envoyer par SMS</button>
+        <p class="boutique__ok">Votre message s’ouvre dans l’application SMS — il ne reste qu’à l’envoyer.</p>
+      </form>
+    </div>
+    <div class="contact__map" data-reveal-clip>
+      <iframe title="Plan — Sélune, Entraigues-sur-la-Sorgue" src="https://www.google.com/maps?q=S%C3%A9lune,+37+Rue+du+19+Mars+1962,+84320+Entraigues-sur-la-Sorgue&output=embed&z=16" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <a class="btn btn--light contact__go" href="https://www.google.com/maps?cid=17615685143766384162" target="_blank" rel="noopener" data-magnet>Itinéraire</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <p class="eyebrow" data-reveal>Questions fréquentes</p>
+  <h2 class="h2" data-letters>Avant de commander</h2>
+  <div class="faq__list">
+    <details data-reveal><summary>Le grand format, c’est possible ?</summary><p>Oui : les gâteaux de la collection Astro existent en grand format, sur commande.</p></details>
+    <details data-reveal><summary>Y a-t-il du sans gluten ?</summary><p>L’Astro Scorpion (23 octobre – 22 novembre) est sans gluten. Pour le reste, demandez-nous : allergies et intolérances se signalent à la commande.</p></details>
+    <details data-reveal><summary>Sur place ou à emporter ?</summary><p>Les deux : le salon de thé vous accueille sur place, et tout se prend aussi à emporter.</p></details>
+    <details data-reveal><summary>Comment commander ?</summary><p>Par téléphone au 06 30 16 89 40, en message sur Instagram (@selune_patisserie), ou avec le formulaire ci-dessus.</p></details>
+  </div>
+</section>
+</main><footer class="footer footer--page">
+  <img class="footer__logo" src="img/logo.webp" alt="Sélune — pâtisserie, salon de thé">
+  <div class="footer__cols">
+    <div><b>Sélune</b><br>37 rue du 19 Mars 1962<br>84320 Entraigues-sur-la-Sorgue</div>
+    <div>Pâtisserie fine · Salon de thé<br>Plats du jour le midi<br>Sur place ou à emporter</div>
+    <div><a href="tel:+33630168940">06 30 16 89 40</a><br><a href="https://www.instagram.com/selune_patisserie/" target="_blank" rel="noopener"><svg class="ig-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.4" fill="currentColor"/></svg>@selune_patisserie</a><br><a href="https://www.google.com/maps?cid=17615685143766384162" target="_blank" rel="noopener">Fiche Google Maps</a></div>
+    <div><a href="index.html">Accueil</a><br><a href="carte.html">La carte</a><br><a href="astro.html">La collection Astro</a><br><a href="commandes.html">Sur commande</a><br><a href="a-propos.html">La maison</a><br><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="footer__row">
+    <span>© 2026 Sélune · SARL · SIRET 106 670 060 00016</span>
+    <span><a href="mentions-legales.html">Mentions légales · CGV · Confidentialité</a></span>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

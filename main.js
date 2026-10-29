@@ -71,13 +71,13 @@
   document.querySelectorAll('[data-letters]').forEach(splitLetters);
   document.querySelectorAll('[data-scrub-words]').forEach(splitWords);
 
-  /* ---------- 2b. Formulaire de commande → e-mail ---------- */
+  /* ---------- 2b. Formulaire de commande → SMS ---------- */
   const form = document.getElementById('orderForm');
   if (form) form.addEventListener('submit', (e) => {
     e.preventDefault();
     const f = new FormData(form);
     const body = `Nom : ${f.get('nom')}\nTéléphone : ${f.get('tel')}\nDate souhaitée : ${f.get('date')}\n\n${f.get('msg')}`;
-    window.location.href = 'mailto:yohann.girard63@gmail.com?subject=' + encodeURIComponent('Demande de commande — site') + '&body=' + encodeURIComponent(body);
+    window.location.href = 'sms:+33630168940?&body=' + encodeURIComponent('Demande de commande — site Sélune\n' + body);
     form.classList.add('sent');
   });
 
@@ -215,7 +215,7 @@
     const pin = document.querySelector('.day__pin');
     if (!pin) return;
     const moments = gsap.utils.toArray('.day__moment'), dots = gsap.utils.toArray('.day__dots i');
-    const times = ['4 h 30', '6 h', '9 h', '12 h 30', '15 h'], angles = [135, 180, 270, 375, 450]; // degrés depuis minuit
+    const times = ['10 h', '12 h', '16 h', '18 h'], angles = [300, 360, 480, 540]; // degrés depuis minuit
     const hand = document.getElementById('clockHand'), glow = document.getElementById('clockGlow'), label = document.getElementById('clockTime');
     const tickBox = document.getElementById('clockTicks');
     for (let i = 0; i < 12; i++) tickBox.insertAdjacentHTML('beforeend', `<u style="transform:rotate(${i * 30}deg)"></u>`);
@@ -270,9 +270,9 @@
   const openNow = document.getElementById('openNow');
   if (openNow) {
     const d = new Date(), day = d.getDay(), m = d.getHours() * 60 + d.getMinutes();
-    const slots = { 0: [[540, 750]], 2: [[540, 750], [900, 1110]], 3: [[540, 750], [900, 1110]], 4: [[540, 750], [900, 1110]], 5: [[540, 750], [900, 1110]], 6: [[540, 810]] };
-    const open = (slots[day] || []).some(([a, b]) => m >= a && m < b);
-    openNow.innerHTML = open ? '<i class="on"></i> Ouvert en ce moment' : '<i></i> Fermé en ce moment' + (day === 1 ? ' — réouverture mardi 9 h' : '');
+    // seuls les horaires du jeudi sont confirmés (10 h – 18 h, fiche Google) ; les autres jours renvoient à la fiche
+    if (day === 4) openNow.innerHTML = (m >= 600 && m < 1080) ? '<i class="on"></i> Ouvert en ce moment' : '<i></i> Fermé en ce moment — le jeudi, 10 h – 18 h';
+    else openNow.innerHTML = '<i></i> Horaires du jour : <a href="https://www.google.com/maps?cid=17615685143766384162" target="_blank" rel="noopener">fiche Google</a>';
   }
 
   /* ---------- 7. Primitives génériques ---------- */
