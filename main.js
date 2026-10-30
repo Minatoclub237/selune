@@ -71,13 +71,15 @@
   document.querySelectorAll('[data-letters]').forEach(splitLetters);
   document.querySelectorAll('[data-scrub-words]').forEach(splitWords);
 
-  /* ---------- 2b. Formulaire de commande → SMS ---------- */
+  /* ---------- 2b. Formulaire de commande → WhatsApp ---------- */
   const form = document.getElementById('orderForm');
   if (form) form.addEventListener('submit', (e) => {
     e.preventDefault();
     const f = new FormData(form);
     const body = `Nom : ${f.get('nom')}\nTéléphone : ${f.get('tel')}\nDate souhaitée : ${f.get('date')}\n\n${f.get('msg')}`;
-    window.location.href = 'sms:+33630168940?&body=' + encodeURIComponent('Demande de commande — site Sélune\n' + body);
+    const url = 'https://wa.me/33630168940?text=' + encodeURIComponent('Bonjour Sélune, voici ma demande de commande :\n\n' + body);
+    const w = window.open(url, '_blank'); // avec 'noopener', open() renvoie toujours null : on coupe l'opener à la main
+    if (w) w.opener = null; else window.location.href = url;
     form.classList.add('sent');
   });
 
@@ -88,6 +90,17 @@
     menu.classList.toggle('open');
     document.body.classList.toggle('menu-open');
   });
+
+  /* ---------- 3b. Nav pleine dès qu'on défile + bouton WhatsApp flottant ---------- */
+  const navEl = document.getElementById('nav'), waFab = document.querySelector('.wa-fab');
+  const fabOff = document.querySelectorAll('.sig__cta, .footer__row'); // fixes dans le coin du bouton flottant : il s'efface quand ils sont à l'écran
+  const onScreen = (e) => { const r = e.getBoundingClientRect(); return r.bottom > 0 && r.top < window.innerHeight; };
+  const onScroll = () => {
+    navEl.classList.toggle('is-solid', window.scrollY > 40);
+    if (waFab) waFab.classList.toggle('is-shown', window.scrollY > window.innerHeight * .4 && ![...fabOff].some(onScreen));
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ---------- 4. Loader → intro ---------- */
   function intro() {
@@ -203,11 +216,12 @@
     gsap.to(wrap, { y: '-=300', ease: 'none', scrollTrigger: { trigger: '.split-hero', start: 'top top', end: 'bottom top', scrub: 1 } });
   });
 
-  /* ---------- 6b3. Mariages : cartes qui s'empilent ---------- */
-  const scards = gsap.utils.toArray('.scard');
-  scards.forEach((c, i) => {
-    const next = scards[i + 1];
-    if (next) gsap.to(c, { scale: .965, ease: 'none', scrollTrigger: { trigger: next, start: 'top 70%', end: 'top 20%', scrub: true } }); // pas d'assombrissement : les cartes restent pleines couleurs
+  /* ---------- 6b3. Sur commande : cartes qui se déploient l'une après l'autre (sans se chevaucher) ---------- */
+  gsap.utils.toArray('.scard').forEach((c) => {
+    gsap.timeline({ scrollTrigger: { trigger: c, start: 'top 92%', end: 'top 35%', scrub: true } })
+      .fromTo(c, { scale: .86 }, { scale: 1, ease: 'none', duration: 1 }, 0) // réduite, la carte reste dans sa propre case
+      .fromTo(c.querySelector('img'), { scale: 1.3 }, { scale: 1, ease: 'none', duration: 1 }, 0)
+      .fromTo(c.querySelectorAll('.scard__body > *'), { y: 50, opacity: 0 }, { y: 0, opacity: 1, ease: 'power2.out', duration: .5, stagger: .12 }, .3);
   });
 
   /* ---------- 6b4. Maison : journée à l'atelier, horloge pinnée ---------- */
