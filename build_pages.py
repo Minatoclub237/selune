@@ -10,15 +10,15 @@ MAPS = 'https://www.google.com/maps?cid=17615685143766384162'
 IG = 'https://www.instagram.com/selune_patisserie/'
 TEL = 'tel:+33630168940'
 TEL_TXT = '06 30 16 89 40'
-def wa(msg='Bonjour Sélune, '):
-    return 'https://wa.me/33630168940?text=' + quote(msg)
+def sms(msg='Bonjour Sélune, '):
+    return 'sms:+33630168940?&amp;body=' + quote(msg)
 ADR = '37 rue du 19 Mars 1962'
 VILLE = '84320 Entraigues-sur-la-Sorgue'
 
 NAV_LINKS = [('index.html', 'Accueil'), ('carte.html', 'La carte'), ('astro.html', 'Astro'), ('commandes.html', 'Sur commande'), ('a-propos.html', 'La maison'), ('contact.html', 'Contact')]
 
 IG_ICO = '<svg class="ig-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.4" fill="currentColor"/></svg>'
-WA_ICO = '<svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.29-.15-1.7-.84-1.97-.93-.26-.1-.45-.15-.65.14-.19.29-.74.93-.91 1.12-.17.19-.34.22-.62.07-.29-.15-1.22-.45-2.32-1.43-.86-.76-1.44-1.7-1.6-1.99-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.65-1.56-.89-2.13-.23-.56-.47-.48-.65-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.76 1.17 2.95c.15.19 2.01 3.06 4.86 4.29.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34M12.05 21.5h-.01c-1.77 0-3.51-.48-5.03-1.38l-.36-.21-3.74.98 1-3.64-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.13 1.03 7 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.44 9.9-9.9 9.9M20.52 3.45A11.76 11.76 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.09.55 4.14 1.59 5.94L.07 24l6.33-1.66a11.85 11.85 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.16-3.48-8.4"/></svg>'
+SMS_ICO = '<svg class="sms-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4.5h14A2.5 2.5 0 0 1 21.5 7v8.5A2.5 2.5 0 0 1 19 18h-8.2L6 21.5V18H5a2.5 2.5 0 0 1-2.5-2.5V7A2.5 2.5 0 0 1 5 4.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8" cy="11.3" r="1.2" fill="currentColor"/><circle cx="12" cy="11.3" r="1.2" fill="currentColor"/><circle cx="16" cy="11.3" r="1.2" fill="currentColor"/></svg>'
 FAVICON ="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317120E'/%3E%3Ccircle cx='15' cy='17' r='9' fill='%23F3E9DA'/%3E%3Ccircle cx='19' cy='14' r='8' fill='%2317120E'/%3E%3Ccircle cx='24' cy='9' r='1.6' fill='%23C9A56B'/%3E%3C/svg%3E"
 
 def head(title, desc, body_class=''):
@@ -59,7 +59,7 @@ def nav(current):
 <div class="menu" id="menu">
   {links}
 </div>
-<a class="wa-fab" href="{wa()}" target="_blank" rel="noopener" aria-label="Écrire à Sélune sur WhatsApp" data-cursor="WhatsApp">{WA_ICO}</a>
+<a class="sms-fab" href="{sms()}" aria-label="Écrire à Sélune par SMS" data-cursor="SMS">{SMS_ICO}</a>
 '''
 
 FOOTER = f'''<footer class="footer footer--page">
@@ -67,7 +67,7 @@ FOOTER = f'''<footer class="footer footer--page">
   <div class="footer__cols">
     <div><b>Sélune</b><br>{ADR}<br>{VILLE}</div>
     <div>Pâtisserie fine · Salon de thé<br>Plats du jour le midi<br>Sur place ou à emporter</div>
-    <div><a href="{TEL}">{TEL_TXT}</a><br><a href="{wa()}" target="_blank" rel="noopener">{WA_ICO}WhatsApp</a><br><a href="{IG}" target="_blank" rel="noopener">{IG_ICO}@selune_patisserie</a><br><a href="{MAPS}" target="_blank" rel="noopener">Fiche Google Maps</a></div>
+    <div><a href="{TEL}">{TEL_TXT}</a><br><a href="{sms()}">{SMS_ICO}Envoyer un SMS</a><br><a href="{IG}" target="_blank" rel="noopener">{IG_ICO}@selune_patisserie</a><br><a href="{MAPS}" target="_blank" rel="noopener">Fiche Google Maps</a></div>
     <div><a href="index.html">Accueil</a><br><a href="carte.html">La carte</a><br><a href="astro.html">La collection Astro</a><br><a href="commandes.html">Sur commande</a><br><a href="a-propos.html">La maison</a><br><a href="contact.html">Contact</a></div>
   </div>
   <div class="footer__row">
@@ -93,8 +93,8 @@ ORDER_FORM = f'''<form class="boutique__form" data-reveal id="orderForm">
         <input type="tel" name="tel" placeholder="Votre téléphone" required>
         <input type="date" name="date" aria-label="Date souhaitée">
         <textarea name="msg" rows="3" placeholder="Votre commande : grand format de votre signe, nombre de parts, date…" required></textarea>
-        <button class="btn btn--wa" type="submit" data-cursor="WhatsApp" data-magnet>Envoyer sur WhatsApp</button>
-        <p class="boutique__ok">Votre message s’ouvre dans WhatsApp — il ne reste qu’à l’envoyer.</p>
+        <button class="btn btn--sms" type="submit" data-cursor="SMS" data-magnet>Envoyer par SMS</button>
+        <p class="boutique__ok">Votre message s’ouvre dans l’application SMS — il ne reste qu’à l’envoyer.</p>
       </form>'''
 
 # ═══════════════════════════ CARTE ═══════════════════════════
@@ -158,7 +158,7 @@ def carte():
   <p class="eyebrow" data-reveal>Une envie précise ? Un seul numéro</p>
   <a class="phone-band__num" href="{TEL}" data-letters data-cursor="Appeler">{TEL_TXT}</a>
   <p class="phone-band__sub" data-reveal>Sur place ou à emporter · {ADR}, Entraigues-sur-la-Sorgue</p>
-  <div class="phone-band__wa" data-reveal><a class="btn btn--wa" href="{wa('Bonjour Sélune, je voudrais passer une commande : ')}" target="_blank" rel="noopener" data-cursor="WhatsApp" data-magnet>Commander sur WhatsApp</a></div>
+  <div class="phone-band__sms" data-reveal><a class="btn btn--sms" href="{sms('Bonjour Sélune, je voudrais passer une commande : ')}" data-cursor="SMS" data-magnet>Commander par SMS</a></div>
 </section>
 </main>''' + FOOTER + tail())
 
@@ -183,9 +183,9 @@ def commandes():
       <p class="eyebrow" data-letters>Sur commande</p>
       <h1 class="mhero__h"><span data-letters>Votre signe</span><span data-letters>en grand</span></h1>
       <p class="mhero__p">Chaque petit gâteau de la collection Astro existe en grand format, sur commande. Et pour une envie précise, on en parle.</p>
-      <div class="mhero__cta"><a class="btn btn--light" href="#demande" data-magnet data-cursor="Commander">Faire ma demande</a><a class="btn btn--wa" href="{wa('Bonjour Sélune, je voudrais commander un grand format : ')}" target="_blank" rel="noopener" data-magnet data-cursor="WhatsApp">WhatsApp</a></div>
+      <div class="mhero__cta"><a class="btn btn--light" href="#demande" data-magnet data-cursor="Commander">Faire ma demande</a><a class="btn btn--sms" href="{sms('Bonjour Sélune, je voudrais commander un grand format : ')}" data-magnet data-cursor="SMS">Par SMS</a></div>
     </div>
-    <div class="mhero__slide" data-mslide><span class="mhero__num" aria-hidden="true">01</span><h2 class="mhero__h"><span data-letters>On en</span><span data-letters>parle</span></h2><p class="mhero__p">Votre signe, le nombre de parts, la date : au {TEL_TXT}, sur WhatsApp, en message sur Instagram, ou avec le formulaire plus bas.</p></div>
+    <div class="mhero__slide" data-mslide><span class="mhero__num" aria-hidden="true">01</span><h2 class="mhero__h"><span data-letters>On en</span><span data-letters>parle</span></h2><p class="mhero__p">Votre signe, le nombre de parts, la date : au {TEL_TXT}, par SMS, en message sur Instagram, ou avec le formulaire plus bas.</p></div>
     <div class="mhero__slide" data-mslide><span class="mhero__num" aria-hidden="true">02</span><h2 class="mhero__h"><span data-letters>Fait</span><span data-letters>maison</span></h2><p class="mhero__p">Préparé chez Sélune, avec intention — comme tout ce qui passe en vitrine.</p></div>
     <div class="mhero__slide" data-mslide><span class="mhero__num" aria-hidden="true">03</span><h2 class="mhero__h"><span data-letters>Vous le</span><span data-letters>retirez</span></h2><p class="mhero__p">Au {ADR}, à Entraigues-sur-la-Sorgue. Le temps d’un thé, si vous voulez.</p></div>
     <div class="mhero__bar"><i id="mBar"></i></div>
@@ -204,7 +204,7 @@ def commandes():
       <h2 class="h2" data-letters>Commander</h2>
       <dl class="boutique__info">
         <div data-reveal><dt>Par téléphone</dt><dd><a href="{TEL}">{TEL_TXT}</a></dd></div>
-        <div data-reveal><dt>Sur WhatsApp</dt><dd><a href="{wa('Bonjour Sélune, je voudrais passer une commande : ')}" target="_blank" rel="noopener">{WA_ICO}Écrire au {TEL_TXT}</a></dd></div>
+        <div data-reveal><dt>Par SMS</dt><dd><a href="{sms('Bonjour Sélune, je voudrais passer une commande : ')}">{SMS_ICO}Écrire au {TEL_TXT}</a></dd></div>
         <div data-reveal><dt>Sur Instagram</dt><dd><a href="{IG}" target="_blank" rel="noopener">{IG_ICO}@selune_patisserie</a></dd></div>
       </dl>
       {ORDER_FORM}
@@ -223,7 +223,7 @@ def commandes():
     <details data-reveal><summary>Le grand format, c’est possible ?</summary><p>Oui : les gâteaux de la collection Astro existent en grand format, sur commande.</p></details>
     <details data-reveal><summary>Y a-t-il du sans gluten ?</summary><p>L’Astro Scorpion (23 octobre – 22 novembre) est sans gluten. Pour le reste, demandez-nous : allergies et intolérances se signalent à la commande.</p></details>
     <details data-reveal><summary>Sur place ou à emporter ?</summary><p>Les deux : le salon de thé vous accueille sur place, et tout se prend aussi à emporter.</p></details>
-    <details data-reveal><summary>Comment commander ?</summary><p>Par téléphone ou sur WhatsApp au {TEL_TXT}, en message sur Instagram (@selune_patisserie), ou avec le formulaire ci-dessus.</p></details>
+    <details data-reveal><summary>Comment commander ?</summary><p>Par téléphone ou par SMS au {TEL_TXT}, en message sur Instagram (@selune_patisserie), ou avec le formulaire ci-dessus.</p></details>
   </div>
 </section>
 </main>''' + FOOTER + tail())
@@ -251,7 +251,7 @@ def astro():
       <h2 class="panel__title" data-letters>{n}</h2>
       <p class="panel__lead">{lead}</p>
       <ul class="panel__list">{lis}</ul>
-      <a class="link" href="{wa(f'Bonjour Sélune, je voudrais commander l’Astro {n} en grand format.')}" target="_blank" rel="noopener">{WA_ICO}Commander en grand format <i>→</i></a>
+      <a class="link" href="{sms(f'Bonjour Sélune, je voudrais commander l’Astro {n} en grand format.')}">{SMS_ICO}Commander en grand format <i>→</i></a>
     </div>
     <span class="panel__count">0{i+1} / 0{len(SIGNS)}</span>
   </div>
@@ -350,7 +350,7 @@ def apropos():
   <p class="eyebrow" data-reveal>Venez la goûter</p>
   <a class="addr-band__line" href="{MAPS}" target="_blank" rel="noopener" data-letters data-cursor="Itinéraire">{ADR}</a>
   <a class="addr-band__line addr-band__line--small" href="{MAPS}" target="_blank" rel="noopener" data-letters>{VILLE}</a>
-  <div class="cta-band__actions" data-reveal><a class="btn btn--light" href="contact.html" data-magnet>Horaires &amp; accès</a><a class="btn btn--wa" href="{wa()}" target="_blank" rel="noopener" data-cursor="WhatsApp" data-magnet>WhatsApp</a><a class="btn btn--ghost" href="{TEL}" data-magnet>{TEL_TXT}</a></div>
+  <div class="cta-band__actions" data-reveal><a class="btn btn--light" href="contact.html" data-magnet>Horaires &amp; accès</a><a class="btn btn--sms" href="{sms()}" data-cursor="SMS" data-magnet>Par SMS</a><a class="btn btn--ghost" href="{TEL}" data-magnet>{TEL_TXT}</a></div>
 </section>
 </main>''' + FOOTER + tail())
 
@@ -363,7 +363,7 @@ def contact():
   <p class="eyebrow" data-reveal>Commandes &amp; questions</p>
   <a class="tel-hero__num" href="{TEL}" data-letters data-cursor="Appeler">{TEL_TXT}</a>
   <p class="tel-hero__now" id="openNow" data-reveal></p>
-  <div class="tel-hero__wa" data-reveal><a class="btn btn--wa" href="{wa()}" target="_blank" rel="noopener" data-cursor="WhatsApp" data-magnet>Écrire sur WhatsApp</a></div>
+  <div class="tel-hero__sms" data-reveal><a class="btn btn--sms" href="{sms()}" data-cursor="SMS" data-magnet>Envoyer un SMS</a></div>
   <div class="tel-hero__alt" data-reveal><a href="{IG}" target="_blank" rel="noopener">{IG_ICO}@selune_patisserie</a> · <a href="{MAPS}" target="_blank" rel="noopener">Fiche Google Maps</a></div>
 </section>
 
@@ -419,7 +419,7 @@ def mentions():
     <p data-reveal><strong>Litiges.</strong> En cas de difficulté, contactez d’abord la boutique. Médiation de la consommation : <em>médiateur à désigner</em>. À défaut, les tribunaux compétents sont ceux du ressort d’Avignon.</p>
 
     <h2 id="confidentialite" data-letters>Données personnelles</h2>
-    <p data-reveal>Les formulaires de ce site ouvrent votre application WhatsApp : les informations saisies (nom, téléphone, date, message) sont envoyées par vous-même au {TEL_TXT}, via WhatsApp (Meta), et servent uniquement à traiter votre demande. Le site ne les stocke pas et ne les transmet à aucun autre tiers. Vous pouvez demander leur suppression au même numéro.</p>
+    <p data-reveal>Les formulaires de ce site ouvrent votre application SMS : les informations saisies (nom, téléphone, date, message) sont envoyées par vous-même au {TEL_TXT} et servent uniquement à traiter votre demande. Elles ne sont ni stockées sur le site ni transmises à des tiers. Vous pouvez demander leur suppression au même numéro.</p>
     <p data-reveal>Ce site n’utilise pas de cookies de suivi. La carte interactive est fournie par Google Maps, qui peut déposer ses propres cookies lors de son chargement.</p>
 
     <h2 id="credits" data-letters>Crédits</h2>

@@ -71,15 +71,13 @@
   document.querySelectorAll('[data-letters]').forEach(splitLetters);
   document.querySelectorAll('[data-scrub-words]').forEach(splitWords);
 
-  /* ---------- 2b. Formulaire de commande → WhatsApp ---------- */
+  /* ---------- 2b. Formulaire de commande → SMS ---------- */
   const form = document.getElementById('orderForm');
   if (form) form.addEventListener('submit', (e) => {
     e.preventDefault();
     const f = new FormData(form);
     const body = `Nom : ${f.get('nom')}\nTéléphone : ${f.get('tel')}\nDate souhaitée : ${f.get('date')}\n\n${f.get('msg')}`;
-    const url = 'https://wa.me/33630168940?text=' + encodeURIComponent('Bonjour Sélune, voici ma demande de commande :\n\n' + body);
-    const w = window.open(url, '_blank'); // avec 'noopener', open() renvoie toujours null : on coupe l'opener à la main
-    if (w) w.opener = null; else window.location.href = url;
+    window.location.href = 'sms:+33630168940?&body=' + encodeURIComponent('Bonjour Sélune, voici ma demande de commande :\n\n' + body);
     form.classList.add('sent');
   });
 
@@ -91,13 +89,13 @@
     document.body.classList.toggle('menu-open');
   });
 
-  /* ---------- 3b. Nav pleine dès qu'on défile + bouton WhatsApp flottant ---------- */
-  const navEl = document.getElementById('nav'), waFab = document.querySelector('.wa-fab');
+  /* ---------- 3b. Nav pleine dès qu'on défile + bouton SMS flottant ---------- */
+  const navEl = document.getElementById('nav'), smsFab = document.querySelector('.sms-fab');
   const fabOff = document.querySelectorAll('.sig__cta, .footer__row'); // fixes dans le coin du bouton flottant : il s'efface quand ils sont à l'écran
   const onScreen = (e) => { const r = e.getBoundingClientRect(); return r.bottom > 0 && r.top < window.innerHeight; };
   const onScroll = () => {
     navEl.classList.toggle('is-solid', window.scrollY > 40);
-    if (waFab) waFab.classList.toggle('is-shown', window.scrollY > window.innerHeight * .4 && ![...fabOff].some(onScreen));
+    if (smsFab) smsFab.classList.toggle('is-shown', window.scrollY > window.innerHeight * .4 && ![...fabOff].some(onScreen));
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
